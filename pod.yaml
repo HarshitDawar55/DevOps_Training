@@ -1,0 +1,18 @@
+# To define Any of the YAML File for Kubernetes, we require 4 components:
+
+# Version of API to use to create/update/delete the resoruces
+apiVersion: v1
+
+# Kind specifies what kind of resoruces has to be launched
+kind: Pod
+
+# Data/Information about POD that is been created by Kubernetes
+metadata:
+  name: linux-container
+
+# Specification of the containers
+spec:
+  containers:
+    - name: "ubuntu"
+      image: "ubuntu"
+      tty: true
