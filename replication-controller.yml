@@ -1,0 +1,28 @@
+apiVersion: v1
+
+kind: ReplicationController
+
+metadata:
+  name: webserver          # Name of the Replication Controller
+  labels:
+    usecase: rc-for-webserver                # Labels for Replication Controller
+
+spec:
+  replicas: 3
+  selector:
+    usecase: webserver
+
+
+  template:
+    metadata:           # Properties of Pod to be managed by RC
+      name: ws-pod
+      labels:
+        usecase: webserver               # Labels for Pod
+
+    spec:
+      containers:
+        - name: ws
+          image: harshitdawar/apache-webserver-and-php
+
+
+
